@@ -1,29 +1,43 @@
 .box {
-    height: 600px;
+    height: 450px;
     width: 400px;
     border: 5px solid black;
     margin: 10px;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    border-radius: 10%;
+    background-color: bisque;
 }
 body{
     display: flex;
     flex-direction: column;
+    background-image: url("hanoi.jpeg");
+    background-size: cover;
 }
-
+#header{
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+    margin: auto;
+    border-radius: 10%;
+    border: 5px solid black;
+}
 #wrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+.disks{
+    border-radius: 15%;
 
 }
-h1 {
+h1, h3 {
     color: green;
     margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 25px;
+    margin-bottom: 10px;
 }
 
 #disk4{

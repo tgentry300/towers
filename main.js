@@ -16,17 +16,33 @@ function moveDisk(event) {
             // prepare topmost disk for moving
             diskToMove = clickedTower.lastElementChild
             moveMode = "drop"
+            diskToMove.style.border = "3px solid black"
+            diskToMove.style.margin = "10px"
 
         } else {
             if (moveMode != "drop") {
-                alert("invalid")
+                alert("Invalid Move")
             }
         }
 
     } else {
         // drop prepared disk to clicked tower
-        clickedTower.appendChild(diskToMove)
-        moveMode = "pickup"
+        if (clickedTower.childElementCount == 0) {
+            clickedTower.appendChild(diskToMove)
+            moveMode = "pickup"
+            diskToMove.style.border = "none"
+            diskToMove.style.margin = "0"
+
+        } else {
+            if (diskToMove.offsetWidth > clickedTower.lastElementChild.offsetWidth) {
+                alert("Oops, can't do that!")
+            } else {
+                clickedTower.appendChild(diskToMove)
+                moveMode = "pickup"
+                diskToMove.style.border = "none"
+                diskToMove.style.margin = "0"
+            }
+        }
     }
 }
 
